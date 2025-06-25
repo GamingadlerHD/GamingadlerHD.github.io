@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://star.cvr.li/sitemap.xml
+
+# Block access to specific files
+Disallow: /script.js
+Disallow: /style.css
+
+# Allow access to images for indexing
+Allow: /media/
