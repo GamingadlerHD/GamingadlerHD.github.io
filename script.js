@@ -109,6 +109,27 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeModal();
+            closeWarningModal();
         }
     });
 });
+
+// Warning Modal Functions
+function showWarningModal() {
+    const warningModal = document.getElementById('warningModal');
+    warningModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeWarningModal() {
+    const warningModal = document.getElementById('warningModal');
+    warningModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function proceedToDownload() {
+    // Close the modal
+    closeWarningModal();
+    // Open the GitHub releases page
+    window.open('https://github.com/GamingadlerHD/VRCitizen-Launcher/releases/latest', '_blank');
+}
