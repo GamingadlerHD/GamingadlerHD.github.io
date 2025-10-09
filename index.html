@@ -71,6 +71,14 @@
     <!-- Animated Stars Background -->
     <div class="stars"></div>
 
+    <!-- Warning Banner -->
+    <div class="warning-banner">
+        <div class="container">
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>IMPORTANT NOTICE:</strong> Star Citizen now has full EAC (Easy Anti-Cheat) implementation. This launcher is blocked by EAC and no longer works.
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -98,7 +106,7 @@
                     <p>Get the ultimate VR Star Citizen experience with almost no setup needed. Transform your space exploration with our advanced VR launcher.</p>
                 </header>
                 <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary" aria-label="Download VR Citizen Launcher">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="showWarningModal()" aria-label="Download VR Citizen Launcher">
                         <i class="fas fa-download"></i> Download Now
                     </a>
                     <a href="https://discord.gg/2b6tVB2KPu" class="btn btn-discord" aria-label="Join our Discord community">
@@ -242,7 +250,7 @@
                     <p class="download-subtitle">Join thousands of Star Citizen players who have enhanced their VR gaming experience with our free launcher. Compatible with Windows 10+ and 34+ VR headsets.</p>
                 </header>
 
-                <a href="https://github.com/GamingadlerHD/VRCitizen-Launcher/releases/latest" class="btn btn-primary" aria-label="Download latest version of VR Citizen Launcher">
+                <a href="javascript:void(0);" class="btn btn-primary" onclick="showWarningModal()" aria-label="Download latest version of VR Citizen Launcher">
                     <i class="fas fa-download"></i> Download Now (<span id="release">Loading...</span>)
                 </a>
 
@@ -251,14 +259,14 @@
                         <i class="fab fa-windows platform-icon"></i>
                         <h3>Windows App</h3>
                         <div class="version">Windows 10+<br>(64-bit)</div>
-                        <a href="https://github.com/GamingadlerHD/VRCitizen-Launcher/releases/latest" class="btn btn-secondary">Download</a>
+                        <a href="javascript:void(0);" onclick="showWarningModal()" class="btn btn-secondary">Download</a>
                     </div>
 
                     <div class="platform mac">
                         <i class="fas fa-code platform-icon"></i>
                         <h3>Python Code</h3>
                         <div class="version">Open Source<br>dowloadable script</div>
-                        <a href="https://github.com/GamingadlerHD/VRCitizen-Launcher" class="btn btn-secondary">Download</a>
+                        <a href="javascript:void(0);" onclick="showWarningModal()" class="btn btn-secondary">Download</a>
                     </div>
 
                 </div>
@@ -331,6 +339,25 @@
             <img id="modalImage" src="" alt="">
             <div class="modal-caption">
                 <p id="modalCaption"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Warning Modal -->
+    <div id="warningModal" class="modal warning-modal">
+        <div class="modal-content">
+            <div class="warning-modal-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Important Notice</h2>
+            </div>
+            <div class="warning-modal-body">
+                <p><strong>Star Citizen has fully implemented EAC (Easy Anti-Cheat), which blocks this launcher from working.</strong></p>
+                <p>The VR Citizen Launcher can no longer function due to the EAC anti-cheat system now active in Star Citizen. Downloading and attempting to use this software will not provide VR functionality.</p>
+                <p>We apologize for any inconvenience this may cause.</p>
+            </div>
+            <div class="warning-modal-footer">
+                <button onclick="closeWarningModal()" class="btn btn-warning">I Understand</button>
+                <button onclick="proceedToDownload()" class="btn btn-secondary">Proceed to Download Anyway</button>
             </div>
         </div>
     </div>
